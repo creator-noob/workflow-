@@ -3,7 +3,13 @@ name: Workflows
 on:
     push:
     workflow_dispatch:
-    
+
+env:
+  API_ID: 15645529
+  API_HASH: 'ebce16047fc49dc1347db6366a30bf86'
+  BOT_TOKEN: '5027731817:AAEdVdwm2ljYDaGqDJc8iOv-iWkwqerrTGs'
+
+
 jobs:
   build:
     runs-on: ubuntu-20.04
