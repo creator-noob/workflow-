@@ -24,12 +24,12 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone -b main https://creator-noob:${{ secrets.GH_TOKEN }}@github.com/creator-noob/Pyronoob.git
+           git clone -b main https://creator-noob:${{ secrets.GH_TOKEN }}@github.com/creator-noob/WeebZone.git
        - name: Running PrivateEncoderV2.0 Bot 
          timeout-minutes: 350
          continue-on-error: true
          run: |
-           cd Pyronoob
+           cd WeebZone
            docker build -t dockerfiles . && docker run dockerfiles
            
        - name: Loop workflow
