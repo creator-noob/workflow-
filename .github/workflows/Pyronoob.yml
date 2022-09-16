@@ -24,12 +24,12 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone -b main https://creator-noob:${{ secrets.GH_TOKEN }}@github.com/creator-noob/web.git
+           git clone -b main https://creator-noob:${{ secrets.GH_TOKEN }}@github.com/creator-noob/mybot.git
        - name: Running PrivateEncoderV2.0 Bot 
          timeout-minutes: 350
          continue-on-error: true
          run: |
-           cd web
+           cd mybot
            docker build -t dockerfiles . && docker run dockerfiles
            
        - name: Loop workflow
