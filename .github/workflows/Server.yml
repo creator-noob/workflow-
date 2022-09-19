@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: alpine
+    runs-on: alpine:3.14
 
     steps:
        - name: Checkout
