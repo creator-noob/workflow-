@@ -11,7 +11,13 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@main
-       
+
+       - name: "Cancel Duplicate Runs"
+         uses: styfle/cancel-workflow-action@0.9.0
+         with:
+            all_but_latest: true
+            access_token: ${{ github.token }}
+
        - name: initialization
          continue-on-error: true
          run: |
@@ -20,7 +26,8 @@ jobs:
            git config --global credential.helper store
            echo "https://creator-noob:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
            
-       
+       - uses: rokibhasansagar/slimhub_actions@main
+
        - name: cloning repo
          continue-on-error: true
          run: |
