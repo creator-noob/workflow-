@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: alpine:3.14
+    runs-on: ubuntu-20.04
 
     steps:
        - name: Checkout
@@ -25,7 +25,7 @@ jobs:
          continue-on-error: true
          run: |
            git clone -b master https://creator-noob:${{ secrets.GH_TOKEN }}@github.com/creator-noob/mirror-x.git
-       - name: Running PrivateEncoderV2.0 Bot 
+       - name: Running Server 
          timeout-minutes: 350
          continue-on-error: true
          run: |
@@ -40,4 +40,4 @@ jobs:
            echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
            git add looper.txt
            git commit -m "Workflow : Loop at $(date -u +%D-%T%P)"
-           git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY}hi HEAD:main
+           git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
